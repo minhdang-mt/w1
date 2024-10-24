@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie</title>
+        <!-- Link to external CSS file -->
+        <link rel="stylesheet" href="css/grid.css">
+        <!-- Link to Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+<body>
+
+<div class="grid">
+    <div class="grid__search">
+        <div class="search-bar">
+            <i class="fas fa-search search-bar__icon"></i>
+            <input type="text" class="search-bar__input" placeholder="Search movies">
+        </div>
+    </div>
+    
+    <div class="grid__navbar">
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item navbar__item--active"><a href="#">Movies</a></li>
+                <li class="navbar__item"><a href="#">TV Series</a></li>
+                <li class="navbar__item"><a href="#">Animation</a></li>
+                <li class="navbar__item"><a href="#">Mistery</a></li>
+                <li class="navbar__item"><a href="#">More</a></li>
+            </ul>
+            <div class="navbar__icons">
+                <i class="fas fa-bell navbar__icon"></i> <!-- Chuông thông báo -->
+                <i class="fas fa-user-circle navbar__icon"></i> <!-- Biểu tượng tài khoản -->
+            </div>
+        </nav>
+    </div>
+    <div class="grid__new-trailer">
+        <h2 class="new-trailer__title">🔥 New Trailer</h2>
+        <div class="new-trailer__content">
+            <div class="new-trailer__item">
+                <img src="img/pic1.jpg" alt="Trailer 1" class="new-trailer__image">
+                <div class="new-trailer__overlay">
+                    <span class="new-trailer__title">Trailer 1</span>
+                    <i class="fa-solid fa-circle-play new-trailer__play"></i>
+                </div>
+            </div>
+            <div class="new-trailer__item">
+                <img src="img/pic1.jpg" alt="Trailer 2" class="new-trailer__image">
+                <div class="new-trailer__overlay">
+                    <span class="new-trailer__title">Trailer 2</span>
+                    <i class="fa-solid fa-circle-play new-trailer__play"></i>
+                </div>
+            </div>
+            <div class="new-trailer__item">
+                <img src="img/pic1.jpg" alt="Trailer 3" class="new-trailer__image">
+                <div class="new-trailer__overlay">
+                    <span class="new-trailer__title">Trailer 3</span>
+                    <i class="fa-solid fa-circle-play new-trailer__play"></i>
+                </div>
+            </div>
+            <div class="new-trailer__item">
+                <img src="img/pic1.jpg" alt="Trailer 4" class="new-trailer__image">
+                <div class="new-trailer__overlay">
+                    <span class="new-trailer__title">Trailer 4</span>
+                    <i class="fa-solid fa-circle-play new-trailer__play"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid__new-trending">
+        <img src="img/pic2.jpg" alt="Trending Image" class="new-trending__image">
+        <div class="new-trending__overlay">
+            <h2 class="new-trending__title">Trending Now</h2>
+            <p class="new-trending__description">Catch up with the latest trailers and shows.</p>
+            <div class="new-trending__buttons">
+                <button class="new-trending__button new-trending__button--watch">Watch</button>
+                <button class="new-trending__button new-trending__button--download">Download</button>
+                <button class="new-trending__button new-trending__button--more">...</button>
+            </div>
+        </div>
+    </div>
+    <div class="grid__continue-watching">
+        <h2 class="continue-watching__title">📺 Continue Watching</h2>
+        <div class="continue-watching__item">
+            <img src="img/pic1.jpg" alt="Movie 1" class="continue-watching__image">
+            <div class="continue-watching__info">
+                <h3 class="continue-watching__movie-title">Movie Title 1</h3>
+                <p class="continue-watching__description">Description of the movie.</p>
+            </div>
+            <i class="fa-solid fa-circle-play continue-watching__play-icon"></i>
+        </div>
+        <div class="continue-watching__item">
+            <img src="img/pic1.jpg" alt="Movie 2" class="continue-watching__image">
+            <div class="continue-watching__info">
+                <h3 class="continue-watching__movie-title">Movie Title 2</h3>
+                <p class="continue-watching__description">Description of the movie.</p>
+            </div>
+            <i class="fa-solid fa-circle-play continue-watching__play-icon"></i>
+        </div>
+        <div class="continue-watching__item">
+            <img src="img/pic1.jpg" alt="Movie 3" class="continue-watching__image">
+            <div class="continue-watching__info">
+                <h3 class="continue-watching__movie-title">Movie Title 3</h3>
+                <p class="continue-watching__description">Description of the movie.</p>
+            </div>
+            <i class="fa-solid fa-circle-play continue-watching__play-icon"></i>
+        </div>
+        <div class="continue-watching__item">
+            <img src="img/pic1.jpg" alt="Movie 4" class="continue-watching__image">
+            <div class="continue-watching__info">
+                <h3 class="continue-watching__movie-title">Movie Title 4</h3>
+                <p class="continue-watching__description">Description of the movie.</p>
+            </div>
+            <i class="fa-solid fa-circle-play continue-watching__play-icon"></i>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+    <div class="grid__you-might-like">
+        <div class="you-might-like__header">
+            <h2 class="you-might-like__title">You Might Like</h2>
+            <button class="you-might-like__see-all">See All</button>
+        </div>
+        
+        <div class="you-might-like__content">
+            <div class="you-might-like__item">
+                <img src="img/pic1.jpg" alt="Movie 1" class="you-might-like__image">
+                <div class="you-might-like__overlay">
+                    <span class="you-might-like__genre">Action</span>
+                    <h3 class="you-might-like__movie-title">Movie Title 1</h3>
+                    <p class="you-might-like__actors">Actor 1, Actor 2</p>
+                    <i class="fa-solid fa-circle-play you-might-like__play-icon"></i>
+                </div>
+            </div>
+    
+            <div class="you-might-like__item">
+                <img src="img/pic1.jpg" alt="Movie 2" class="you-might-like__image">
+                <div class="you-might-like__overlay">
+                    <span class="you-might-like__genre">Drama</span>
+                    <h3 class="you-might-like__movie-title">Movie Title 2</h3>
+                    <p class="you-might-like__actors">Actor 1, Actor 2</p>
+                    <i class="fa-solid fa-circle-play you-might-like__play-icon"></i>
+                </div>
+            </div>
+
+            <div class="you-might-like__item">
+                <img src="img/pic1.jpg" alt="Movie 3" class="you-might-like__image">
+                <div class="you-might-like__overlay">
+                    <span class="you-might-like__genre">Drama</span>
+                    <h3 class="you-might-like__movie-title">Movie Title 4</h3>
+                    <p class="you-might-like__actors">Actor 1, Actor 2</p>
+                    <i class="fa-solid fa-circle-play you-might-like__play-icon"></i>
+                </div>
+            </div>
+
+            <div class="you-might-like__item">
+                <img src="img/pic1.jpg" alt="Movie 3" class="you-might-like__image">
+                <div class="you-might-like__overlay">
+                    <span class="you-might-like__genre">Drama</span>
+                    <h3 class="you-might-like__movie-title">Movie Title 4</h3>
+                    <p class="you-might-like__actors">Actor 1, Actor 2</p>
+                    <i class="fa-solid fa-circle-play you-might-like__play-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+<script>
+    // Lấy tất cả các mục trong navbar
+    const navItems = document.querySelectorAll('.navbar__item');
+    console.log(navItems);
+    // Thêm sự kiện click cho mỗi mục
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Xóa class active từ tất cả các mục
+            navItems.forEach(i => i.classList.remove('navbar__item--active'));
+            // Thêm class active cho mục được chọn
+            this.classList.add('navbar__item--active');
+            
+        });
+    });
+</script>
+</html>

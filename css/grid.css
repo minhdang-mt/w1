@@ -1,0 +1,400 @@
+body {
+  /* overflow-y: hidden; 
+  overflow-x: hidden;  */
+  background-image: url("/img/background.jpg");
+  background-attachment: fixed;
+  /* background-color: #0f0f0fd3; */
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    column-gap: 20px;
+    row-gap: 30px;
+    padding: 20px;
+}
+  
+.grid__continue-watching, 
+.grid__you-might-like {
+    background-color: rgba(255, 255, 255, 0.24);
+    text-align: start;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 12px;
+}
+
+.grid__search,
+.grid__navbar {
+    /* background-color: rgba(255, 255, 255, 0.527); */
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 12px;
+    max-height: 100px;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 25px; /* Bo góc */
+    padding: 10px;
+    background-color: #ffffff;
+    width: 95%;
+    max-width: 400px; /* Chiều rộng tối đa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Font Awesome */
+.search-bar__icon {
+    font-size: 20px;
+    color: #aaa;
+    margin-right: 10px;
+}
+
+/* Ô nhập */
+.search-bar__input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Placeholder màu xám nhạt */
+.search-bar__input::placeholder {
+    color: #aaa;
+}
+
+/* Nav Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #33333300;
+    padding: 10px 20px;
+}
+
+/* Menu Items */
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar__item {
+    margin-right: 20px;
+    position: relative; /* Để sử dụng cho trạng thái active */
+}
+
+.navbar__item a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px; /* Thêm padding cho không gian */
+}
+
+.navbar__item--active a {
+    background-color: #d8d5d5b9; /* Màu nền cho mục đang chọn */
+    border-radius: 12px; /* Bo góc cho màu nền */
+}
+
+/* Hiệu ứng hover */
+.navbar__item a:hover {
+    background-color: #444; /* Màu nền khi di chuột */
+    border-radius: 12px; /* Bo góc cho màu nền */
+}
+
+/* Icons */
+.navbar__icons {
+    display: flex;
+    align-items: center;
+    
+}
+
+.navbar__icon {
+    font-size: 24px;
+    color: white;
+    margin-left: 20px;
+    border-radius: 24px;
+    max-width: 100px;
+    background-color: rgba(226, 219, 219, 0.76) ;
+}
+
+.navbar__icon:hover {
+    color: #ddd;
+}
+/* New Trailer */
+.grid__new-trailer {
+    background-color: rgba(255, 255, 255, 0.527); /* Màu nền cho box */
+    border-radius: 12px; /* Bo góc */
+    padding-left: 10px;
+    padding-right: 10px; /* Padding cho box */
+    max-height: 400px; /* Đặt chiều cao tối đa cho box */
+    overflow: hidden;
+}
+
+.new-trailer__title {
+    font-size: 24px; /* Kích thước chữ tiêu đề */
+    margin: 10px; /* Khoảng cách dưới tiêu đề */
+    color:#ffffff;
+}
+
+.new-trailer__content {
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    gap: 15px;
+    max-height: 350px;
+    overflow: auto; /* Thêm thanh cuộn nếu nội dung vượt quá chiều cao */
+    scrollbar-width: none;
+}
+
+.new-trailer__item {
+    position: relative; 
+}
+
+.new-trailer__image {
+    width: 100%; /* Chiều rộng hình ảnh 100% */
+    margin-bottom: 10px; /* Khoảng cách giữa các hình ảnh */
+    border-radius: 5px; /* Bo góc cho hình ảnh */
+
+}
+.new-trailer__overlay {
+    position: absolute;
+    bottom: 0; /* Căn ở đáy hình ảnh */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Tiêu đề ở bên trái, nút play ở bên phải */
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền đen trong suốt */
+    padding: 10px;
+    backdrop-filter: blur(5px); /* Hiệu ứng blur */
+    border-radius: 0 0 8px 8px; /* Bo góc cho phần dưới */
+}
+.new-trailer__play {
+    color: rgb(255, 255, 255);
+    font-size: 42px;
+    cursor: pointer; /* Trỏ chuột khi hover vào biểu tượng play */
+}
+
+.grid__new-trending {
+    position: relative;
+    background-color:rgba(255, 255, 255, 0.527) ;
+    width: 100%; /* Đảm bảo hình ảnh bao quát toàn bộ */
+    max-height: 400px; /* Giới hạn chiều cao */
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px; /* Bo góc cho hình ảnh */
+}
+
+.new-trending__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+    display: block;
+}
+
+.new-trending__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền đen trong suốt */
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.new-trending__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.new-trending__description {
+    font-size: 16px;
+    margin: 0;
+}
+
+.new-trending__buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.new-trending__button {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.new-trending__button--watch {
+    background-color: #1dbf73; /* Màu xanh lá cho nút Watch */
+}
+
+.new-trending__button--download {
+    background-color: #007bff; /* Màu xanh dương cho nút Download */
+}
+
+.new-trending__button--more {
+    background-color: #6c757d; /* Màu xám cho nút More */
+}
+
+/* Continue Watching Container */
+.grid__continue-watching {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.603);
+    border-radius: 8px;
+    overflow: auto;
+    max-height: 300px;
+    scrollbar-width: none;
+}
+
+.continue-watching__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Continue Watching Item */
+.continue-watching__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Square Image */
+.continue-watching__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Movie Info */
+.continue-watching__info {
+    flex-grow: 1;
+}
+
+.continue-watching__movie-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.continue-watching__description {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0 0;
+}
+
+/* Play Icon */
+.continue-watching__play-icon {
+    color: rgb(255, 255, 255);
+    font-size: 42px;
+    cursor: pointer; /* Trỏ chuột khi hover vào biểu tượng play */
+}
+
+/* You Might Like Container */
+.grid__you-might-like {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.603);
+    border-radius: 8px;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.you-might-like__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.you-might-like__title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.you-might-like__see-all {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Content */
+.you-might-like__content {
+    display: flex;
+    gap: 20px;
+}
+
+.you-might-like__item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.you-might-like__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay with genre, title, actors */
+.you-might-like__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.you-might-like__genre {
+    font-weight: bold;
+}
+
+.you-might-like__movie-title {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.you-might-like__actors {
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* Play Icon */
+.you-might-like__play-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 32px;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
