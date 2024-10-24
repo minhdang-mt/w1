@@ -30,8 +30,19 @@
                 <li class="navbar__item"><a href="#">More</a></li>
             </ul>
             <div class="navbar__icons">
-                <i class="fas fa-bell navbar__icon"></i> <!-- Chuông thông báo -->
-                <i class="fas fa-user-circle navbar__icon"></i> <!-- Biểu tượng tài khoản -->
+                <i class="fas fa-bell navbar__icon navbar__bell"></i> <!-- Chuông thông báo -->
+                <div class="account-menu">
+                    <div class="account-menu__icon">
+                        <i class="fas fa-user-circle"></i> <!-- Biểu tượng tài khoản -->
+                    </div>
+                    <div class="account-menu__details">
+                        <span class="account-menu__username">Nguyen Minh Dang</span>
+                        <span class="account-menu__fullname">@dnguyenminh</span>
+                    </div>
+                    <div class="account-menu__dropdown">
+                        <i class="fas fa-caret-down"></i> <!-- Hình tam giác xuống -->
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
@@ -71,9 +82,21 @@
     
     <div class="grid__new-trending">
         <img src="img/pic2.jpg" alt="Trending Image" class="new-trending__image">
+        
+        <!-- Text 'New Trending' ở góc trái trên cùng -->
+        <div class="new-trending__label">🔥New Trending</div>
+        
         <div class="new-trending__overlay">
-            <h2 class="new-trending__title">Trending Now</h2>
+            <!-- Thể loại nằm trên tiêu đề -->
+            <div class="new-trending__category">
+                <span>Action</span>
+                <span>Adventure</span>
+                <span>Drama</span>
+            </div>
+            
+            <h2 class="new-trending__title">Fuji Mountain</h2>
             <p class="new-trending__description">Catch up with the latest trailers and shows.</p>
+            
             <div class="new-trending__buttons">
                 <button class="new-trending__button new-trending__button--watch">Watch</button>
                 <button class="new-trending__button new-trending__button--download">Download</button>
@@ -81,6 +104,7 @@
             </div>
         </div>
     </div>
+    
     <div class="grid__continue-watching">
         <h2 class="continue-watching__title">📺 Continue Watching</h2>
         <div class="continue-watching__item">
