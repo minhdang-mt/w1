@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/grid.css">
         <!-- Link to Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     </head>
     
 <body>
@@ -16,31 +17,31 @@
     <div class="grid__search">
         <div class="search-bar">
             <i class="fas fa-search search-bar__icon"></i>
-            <input type="text" class="search-bar__input" placeholder="Search movies">
+            <input type="text" class="search-bar__input" placeholder="Search songs, albums, artists,...">
         </div>
     </div>
     
     <div class="grid__navbar">
         <nav class="navbar">
             <ul class="navbar__menu">
-                <li class="navbar__item navbar__item--active"><a href="#">Movies</a></li>
-                <li class="navbar__item"><a href="#">TV Series</a></li>
-                <li class="navbar__item"><a href="#">Animation</a></li>
-                <li class="navbar__item"><a href="#">Mistery</a></li>
+                <li class="navbar__item navbar__item--active"><a href="#">Songs</a></li>
+                <li class="navbar__item"><a href="#">Albums</a></li>
+                <li class="navbar__item"><a href="#">Artists</a></li>
+                <li class="navbar__item"><a href="#">Podcasts</a></li>
                 <li class="navbar__item"><a href="#">More</a></li>
             </ul>
             <div class="navbar__icons">
-                <i class="fas fa-bell navbar__icon navbar__bell"></i> <!-- Chuông thông báo -->
+                <i class="fas fa-bell navbar__icon navbar__bell"></i> 
                 <div class="account-menu">
                     <div class="account-menu__icon">
-                        <i class="fas fa-user-circle"></i> <!-- Biểu tượng tài khoản -->
+                        <i class="fas fa-user-circle"></i> 
                     </div>
                     <div class="account-menu__details">
-                        <span class="account-menu__username">Nguyen Minh Dang</span>
+                        <span class="account-menu__username">MinhDang</span>
                         <span class="account-menu__fullname">@dnguyenminh</span>
                     </div>
                     <div class="account-menu__dropdown">
-                        <i class="fas fa-caret-down"></i> <!-- Hình tam giác xuống -->
+                        <i class="fas fa-caret-down"></i> 
                     </div>
                 </div>
             </div>
@@ -48,45 +49,26 @@
     </div>
     <div class="grid__new-trailer">
         <h2 class="new-trailer__title">🔥 New Trailer</h2>
-        <div class="new-trailer__content">
-            <div class="new-trailer__item">
-                <img src="img/pic1.jpg" alt="Trailer 1" class="new-trailer__image">
-                <div class="new-trailer__overlay">
-                    <span class="new-trailer__title">Trailer 1</span>
-                    <i class="fa-solid fa-circle-play new-trailer__play"></i>
-                </div>
-            </div>
-            <div class="new-trailer__item">
-                <img src="img/pic1.jpg" alt="Trailer 2" class="new-trailer__image">
-                <div class="new-trailer__overlay">
-                    <span class="new-trailer__title">Trailer 2</span>
-                    <i class="fa-solid fa-circle-play new-trailer__play"></i>
-                </div>
-            </div>
-            <div class="new-trailer__item">
-                <img src="img/pic1.jpg" alt="Trailer 3" class="new-trailer__image">
-                <div class="new-trailer__overlay">
-                    <span class="new-trailer__title">Trailer 3</span>
-                    <i class="fa-solid fa-circle-play new-trailer__play"></i>
-                </div>
-            </div>
-            <div class="new-trailer__item">
-                <img src="img/pic1.jpg" alt="Trailer 4" class="new-trailer__image">
-                <div class="new-trailer__overlay">
-                    <span class="new-trailer__title">Trailer 4</span>
-                    <i class="fa-solid fa-circle-play new-trailer__play"></i>
-                </div>
-            </div>
+        <div class="new-trailer__content" id="new-trailer-content">
+            <!-- Các bài hát sẽ được thêm vào đây bằng JavaScript -->
         </div>
+        
     </div>
     
     <div class="grid__new-trending">
-        <img src="img/pic2.jpg" alt="Trending Image" class="new-trending__image">
+        <img src="img/background.jpg" alt="Trending Image" class="new-trending__image">
         
         <!-- Text 'New Trending' ở góc trái trên cùng -->
         <div class="new-trending__label">🔥New Trending</div>
         
         <div class="new-trending__overlay">
+            <div id="audio-player-container">
+                <audio id="audio-player" controls>
+                    <source id="audio-source" src="" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            
             <!-- Thể loại nằm trên tiêu đề -->
             <div class="new-trending__category">
                 <span>Action</span>
@@ -94,53 +76,35 @@
                 <span>Drama</span>
             </div>
             
-            <h2 class="new-trending__title">Fuji Mountain</h2>
+            <h2 class="new-trending__title">CyberPunk 2077</h2>
             <p class="new-trending__description">Catch up with the latest trailers and shows.</p>
             
             <div class="new-trending__buttons">
-                <button class="new-trending__button new-trending__button--watch">Watch</button>
-                <button class="new-trending__button new-trending__button--download">Download</button>
+                <button id="stop-button" class="new-trending__button new-trending__button--watch">
+                    <i class="fas fa-play new-trending__icon"></i> Play
+                </button>
+                <button class="new-trending__button new-trending__button--download">
+                    <i class="fas fa-download new-trending__icon"></i> Download
+                </button>
                 <button class="new-trending__button new-trending__button--more">...</button>
+                
+                <button class="new-trending__button new-trending__button--prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            
+                <!-- Nút tiến tới -->
+                <button class="new-trending__button new-trending__button--next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </div>
     
-    <div class="grid__continue-watching">
+    <div class="grid__continue-watching" id="continue-watching-content">
         <h2 class="continue-watching__title">📺 Continue Watching</h2>
-        <div class="continue-watching__item">
-            <img src="img/pic1.jpg" alt="Movie 1" class="continue-watching__image">
-            <div class="continue-watching__info">
-                <h3 class="continue-watching__movie-title">Movie Title 1</h3>
-                <p class="continue-watching__description">Description of the movie.</p>
-            </div>
-            <i class="fa-solid fa-circle-play continue-watching__play-icon"></i>
-        </div>
-        <div class="continue-watching__item">
-            <img src="img/pic1.jpg" alt="Movie 2" class="continue-watching__image">
-            <div class="continue-watching__info">
-                <h3 class="continue-watching__movie-title">Movie Title 2</h3>
-                <p class="continue-watching__description">Description of the movie.</p>
-            </div>
-            <i class="fa-solid fa-circle-play continue-watching__play-icon"></i>
-        </div>
-        <div class="continue-watching__item">
-            <img src="img/pic1.jpg" alt="Movie 3" class="continue-watching__image">
-            <div class="continue-watching__info">
-                <h3 class="continue-watching__movie-title">Movie Title 3</h3>
-                <p class="continue-watching__description">Description of the movie.</p>
-            </div>
-            <i class="fa-solid fa-circle-play continue-watching__play-icon"></i>
-        </div>
-        <div class="continue-watching__item">
-            <img src="img/pic1.jpg" alt="Movie 4" class="continue-watching__image">
-            <div class="continue-watching__info">
-                <h3 class="continue-watching__movie-title">Movie Title 4</h3>
-                <p class="continue-watching__description">Description of the movie.</p>
-            </div>
-            <i class="fa-solid fa-circle-play continue-watching__play-icon"></i>
-        </div>
-        <!-- Add more items as needed -->
+        <!-- Các continue-watching__item sẽ được thêm vào đây -->
     </div>
+    
     <div class="grid__you-might-like">
         <div class="you-might-like__header">
             <h2 class="you-might-like__title">You Might Like</h2>
@@ -192,6 +156,12 @@
     
 </div>
 
+<!-- Phần để hiển thị danh sách bài hát -->
+<div id="song-list"></div>
+
+<!-- Nhúng file main.js -->
+<script type="module" src="js/main.js"></script>
+<script src="js/cookie.js"></script>
 </body>
 <script>
     // Lấy tất cả các mục trong navbar
